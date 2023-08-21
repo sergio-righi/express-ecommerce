@@ -42,7 +42,7 @@ class App {
   setConfiguration() {
     this.express.use(express.json({ limit: '10mb' }))
     this.express.use(cors({
-      origin: new RegExp(env.get('cors')),
+      origin: env.get('cors'),
     }))
     this.express.use(compression())
     this.express.use(express.urlencoded({ extended: true }))
